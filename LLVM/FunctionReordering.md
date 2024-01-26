@@ -6,6 +6,7 @@
 4. lld reads this section for all objects if it exists.
 
   COFF specific:
+  
 5. readCallGraphsFromObjectFiles reads all \[Caller-MCSymbol, Callee-MCSymbol, Count\], then converts it to \[Caller-SectionChunk, Callee-SectionChunk, Count\] and store into callGraphProfile.
 6. lld uses CallGraphSort to get function section priority. It tries to reduce call distance and then sort the function section by density.
    
