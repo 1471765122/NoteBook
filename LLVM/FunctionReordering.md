@@ -11,3 +11,5 @@
 6. For each partialSections(e.g. .text, .text$hot), lld uses CallGraphSort to get function section priority. It tries to reduce call distance and then sort the function section by density.
    
    
+Function section for Funclet
+FuncletLayout sorted machine basic block so that MBB belonging to same Funclet is put together.
