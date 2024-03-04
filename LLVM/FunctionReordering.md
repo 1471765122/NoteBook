@@ -1,3 +1,6 @@
+
+# How function reordering implements
+
     clang -O2 foo.cpp -ffunction-sections -fsplit-machine-functions -fprofile-sample-use=prof.txt
 
 1. CGProfilePass goes through Module to get \[Caller, Callee, Count\] and save it as "CG Profile" Metadata.
@@ -11,5 +14,10 @@
 6. For each partialSections(e.g. .text, .text$hot), lld uses CallGraphSort to get function section priority. It tries to reduce call distance and then sort the function section by density.
    
    
-Function section for Funclet
+# Function section for Funclet
 FuncletLayout sorted machine basic block so that MBB belonging to same Funclet is put together.
+
+
+# Reference for llvm.bb.address.map section
+
+https://lists.llvm.org/pipermail/llvm-dev/2020-July/143512.html
